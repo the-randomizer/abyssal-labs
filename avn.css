@@ -1,0 +1,217 @@
+    :root {
+    --header-height: 250px;
+    --bar-height: 50px;
+    --anim-time: 2.5s;
+}
+
+body, h1, p, ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    color: white;
+    font-family: "Chakra Petch", Arial, sans-serif;
+    font-size: 50px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 0px;
+    color: white;
+    font-family: "Chakra Petch", Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+#logo {
+    background-image: linear-gradient(#2E2E74, #0A0A23);
+    position: relative;
+    height: var(--header-height);
+    align-content: center;
+}
+
+#logo h1 {
+    width: fit-content;
+    font-size: 5rem;
+    transition: font-size .35s, filter .35s;
+}
+
+#logo img {
+    opacity: 0.2;
+    pointer-events: none;
+    user-select: none;
+    height: 200px;
+    width: 200px;
+}
+
+.centered {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+#logo h1:hover {
+    font-size: 5.25rem;
+    filter: drop-shadow(gray 0 0 4px);
+}
+
+#link-bar ul {
+    height: var(--bar-height);
+    background-color: #0A0A23;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+#link-bar ul li {
+    width: 300px;
+    text-align: center;
+    /* https://stackoverflow.com/questions/23934749/fill-element-from-center-on-hover */
+    background-image: linear-gradient(#24244B, #24244B);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    transition: background-size .35s, color .35s;
+}
+
+#link-bar ul li:hover {
+    background-size: 100% 100%;
+}
+
+#link-bar ul li a {
+    display: inline-block;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Chakra Petch";
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+#content-wrapper {
+    padding: 100px 200px;
+    background-image: linear-gradient(#0A0A23, #19193E);
+    position: relative;
+    min-height: calc(100vh - var(--header-height) - var(--bar-height));
+    height: auto;
+    color: white;
+}
+
+.fade-in {
+    animation: fade var(--anim-time);
+}
+@keyframes fade {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.slide-in {
+    animation: slide var(--anim-time) forwards;
+}
+@keyframes slide {
+        from {
+            top: 0;
+        }
+        to {
+            top: 100%;
+        }
+}
+
+.rule-fade-in {
+    height: 5px;
+    margin: 2rem 0;
+    background-image: linear-gradient(#FFFFFF 30%, transparent 30%);
+    background-size: 0% 20px;
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    animation: anim 1.25s forwards; }
+@keyframes anim {
+    from {
+        background-size: 0% 5px;
+    }
+    to {
+        background-size: 80% 5px;
+    }
+}
+
+blockquote {
+    position: relative;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    padding: 20px;
+    border: 2px solid #696969;
+    box-shadow: 0px 0px 4px 2px #3b3b3b;
+    background-color: #19193E;
+}
+
+blockquote p, blockquote li {
+    padding: 8px 0px;
+    font-family: "Aldrich";
+    font-size: 1rem;
+    color: rgb(175, 173, 173);
+}
+
+blockquote ul {
+    padding-left: 25px;
+}
+
+.project-info {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.project-info p {
+    padding-right: 5px;
+}
+
+.background-img {
+    pointer-events: none;
+    user-select: none;
+    opacity: 0.2;
+    width: 500px;
+    height: auto;
+}
+
+.collapsible-drawer, .fake-collapsible {
+    font-family: "Chakra Petch";
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #848484;
+    text-align: center;
+    cursor: pointer;
+}
+
+.collapsible-content {
+    display: none;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    opacity: 0;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
